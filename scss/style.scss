@@ -12,16 +12,91 @@
 }
 
 body{
-	background:#E6B098;
+	background: rgba(10,0,30,.9);
+	margin:0;
+	padding:0;
+
+	> svg {
+	    position: fixed;
+	    top: 0;
+	    right: 0;
+	    bottom: 0;
+	    left: 0;
+	    opacity: .5;
+	    width: 100%;
+	    height: auto;
+   	}
 }
 
 #skrollr-stylesheets{
 	position:relative;
 }
 
-#element{
-	position:absolute;
-	width:400px;
-	height:400px;
-	background:#F2E1AC;
+#period {
+	position: relative;
+	border: 5px dotted yellow;
+	box-sizing: border-box;
+	height:5000px;
+
+	#element{
+		position:absolute;
+		width:100px;
+		height:100px;
+		background:#F2E1AC;
+		font-family:arial;
+		box-sizing: border-box;
+
+		@media only all and (min-width:800px) and (max-width:999px) {
+			width:300px;
+			height:300px;
+		}
+		@media only all and (min-width:1000px) {
+			width:400px;
+			height:400px;
+		}
+
+		#info, #breakpoint{
+			width:100px;
+			height:50px;
+			display:table-cell;
+			text-align:center;
+			vertical-align: middle;
+			color:rgba(10,0,30,.9);
+
+			@media only all and (min-width:800px) and (max-width:999px) {
+				width:300px;
+				height:150px;
+			}
+			@media only all and (min-width:1000px) {
+				width:400px;
+				height:200px;
+			}
+		}
+	}
+
+	ul.blocks.green li.block {
+		background: #00d395;
+	}
+
+	ul.blocks {
+		position: absolute;
+		top: 800px;
+		left: 0;
+		right: 0;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+
+		li.block {
+			list-style: none;
+			display: block;
+			width: 50px;
+			height: 50px;
+			margin: 0 auto 400px;
+			border-radius: 50px;
+			box-shadow: 0 30px 2px rgba(0, 0, 0, 0.1);
+		}
+	}
 }
+
+

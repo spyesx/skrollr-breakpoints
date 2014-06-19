@@ -18,10 +18,21 @@
 	</head>
 
 		<div id="dashboard-skrollr-x"></div>
-
+		<?php include('img/cross-fixed.svg');?>
 		<div id="skrollr-body">
 
-			<div id="element"></div>
+			<div id="period">
+				<div id="element">
+					<div id="info"></div>
+					<div class="sperator"></div>
+					<div id="breakpoint"></div>
+				</div>
+				<ul class="blocks green">
+					<li class="block"></li><li class="block"></li><li class="block"></li><li class="block"></li><li class="block"></li>
+					<li class="block"></li><li class="block"></li><li class="block"></li><li class="block"></li><li class="block"></li>
+				</ul>
+				<?php include('img/cross.svg');?>
+			</div>
 
 		</div>
 

@@ -21,20 +21,28 @@
 			skrollr.stylesheets();
 			App.skrollr.refresh();
 			App.viewport.breakpoint.original = newVBreakpoint;
+			$('#breakpoint').html('Breakpoint : '+newVBreakpoint);
 		}
 	};
 
 	$(window).on('resize', handlerResize);
 	handlerResize();
+	$('#breakpoint').html('breakpoint : '+App.viewport.breakpoint.original);
 	skrollr.stylesheets();
+
+	var d = document.getElementById('dashboard-skrollr-x');
+	var e = document.getElementById('element').style;
+	var i = document.getElementById('info');
 
 	App.skrollr = skrollr.init(
 	{
 		smoothScrolling: false,
 		render: function(data)
 		{
-			document.getElementById('dashboard-skrollr-x').innerHTML = data.curTop;
-		}
-	});	
+			d.innerHTML = data.curTop;
+			i.innerHTML = 'left : '+Math.round(e.left.replace('px', ''))+'<br />top : '+Math.round(e.top.replace('px', ''))+''
+		},
+		forceHeight:true
+	});
 
 })(window, document);

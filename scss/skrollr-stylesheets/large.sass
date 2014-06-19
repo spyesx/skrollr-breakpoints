@@ -4,14 +4,15 @@ $about_section_end: $about_section_begin + $about_section_duration
 
 #element
 	-skrollr-animation-name : element
+	-skrollr-anchor-target : '#period'
 
 @-skrollr-keyframes element
 	#{$about_section_begin}
 		left : 600px
 		opacity#{"[swing]"} : .8
-		top : $about_section_begin+px
+		top : ($about_section_begin+100)+px
 
 	#{$about_section_end}
 		left : 50px
 		opacity : 1.0
-		top : $about_section_end+px
+		top : ($about_section_end+300)+px
