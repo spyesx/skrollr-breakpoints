@@ -1,0 +1,27 @@
+#dashboard-skrollr-x{
+	background: rgba(0,0,0,.5);
+	color:#fff;
+	padding:10px;
+	position:fixed;
+	z-index:999999999999999;
+	top:10px;
+	left:10px;
+	border-radius: 5px;
+	width:200px;
+	font-size:12px;
+}
+
+body{
+	background:#E6B098;
+}
+
+#skrollr-stylesheets{
+	position:relative;
+}
+
+#element{
+	position:absolute;
+	width:400px;
+	height:400px;
+	background:#F2E1AC;
+}

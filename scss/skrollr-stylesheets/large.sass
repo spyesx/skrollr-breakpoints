@@ -1,0 +1,17 @@
+$about_section_begin: 0
+$about_section_duration: 2000
+$about_section_end: $about_section_begin + $about_section_duration
+
+#element
+	-skrollr-animation-name : element
+
+@-skrollr-keyframes element
+	#{$about_section_begin}
+		left : 600px
+		opacity#{"[swing]"} : .8
+		top : $about_section_begin+px
+
+	#{$about_section_end}
+		left : 50px
+		opacity : 1.0
+		top : $about_section_end+px
