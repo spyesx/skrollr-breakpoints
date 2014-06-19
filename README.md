@@ -6,7 +6,7 @@ A Skrollr implementation with skrollr-stylesheet, grunt, sass and wlib in order 
 ## Uses
 
 * Skrollr
-* Skrollr-stylesheet
+* Skrollr-stylesheet (own fork)
 * Wlib
 * SASS
 * Grunt
