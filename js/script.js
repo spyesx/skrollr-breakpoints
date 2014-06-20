@@ -1,7 +1,9 @@
-'use strict';
+
 
 (function(window, document)
 {
+	'use strict';
+
 	window.App = {};
 
 	App.viewport = new wlib.viewport();
@@ -15,7 +17,7 @@
 	var handlerResize = function()
 	{
 		var newVBreakpoint = App.viewport.breakpoint.identify();
-		if(newVBreakpoint != App.viewport.breakpoint.original)
+		if(newVBreakpoint !== App.viewport.breakpoint.original)
 		{
 			wlib.events.trigger('App/viewport/breakpoint/change');
 			skrollr.stylesheets();
@@ -40,7 +42,7 @@
 		render: function(data)
 		{
 			d.innerHTML = data.curTop;
-			i.innerHTML = 'left : '+Math.round(e.left.replace('px', ''))+'<br />top : '+Math.round(e.top.replace('px', ''))+''
+			i.innerHTML = 'left : '+Math.round(e.left.replace('px', ''))+'<br />top : '+Math.round(e.top.replace('px', ''))+'';
 		},
 		forceHeight:true
 	});
