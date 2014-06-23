@@ -14,23 +14,18 @@
 		.set('large', 'all and (min-width:800px) and (max-width:999px)')
 		.set('x-large', 'all and (min-width:1000px)');
 
+
+	wlib.events.listen('wlib/viewport/breakpoint/change', function(e, datas)
+	{
+		skrollr.stylesheets();
+		App.skrollr.refresh();
+		$('#breakpoint').html('Breakpoint : '+datas.breakpointName);
+	});
+
 	var handlerResize = function()
 	{
-		var newVBreakpoint = App.viewport.breakpoint.identify();
-		if(newVBreakpoint !== App.viewport.breakpoint.original)
-		{
-			wlib.events.trigger('App/viewport/breakpoint/change');
-			skrollr.stylesheets();
-			App.skrollr.refresh();
-			App.viewport.breakpoint.original = newVBreakpoint;
-			$('#breakpoint').html('Breakpoint : '+newVBreakpoint);
-		}
+		App.viewport.breakpoint.identify();
 	};
-
-	$(window).on('resize', handlerResize);
-	handlerResize();
-	$('#breakpoint').html('breakpoint : '+App.viewport.breakpoint.original);
-	skrollr.stylesheets();
 
 	var d = document.getElementById('dashboard-skrollr-x');
 	var e = document.getElementById('element').style;
@@ -46,5 +41,9 @@
 		},
 		forceHeight:true
 	});
+
+	$(window).on('resize', handlerResize);
+	handlerResize();
+	$('#breakpoint').html('breakpoint : '+App.viewport.breakpoint.current);
 
 })(window, document);
